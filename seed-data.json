@@ -1,0 +1,47 @@
+[
+  {
+    "id": "seed-1",
+    "country_iso2": "FR",
+    "start_date": "2012-09-12",
+    "end_date": "2012-09-19",
+    "note": "初めてのパリ",
+    "created_at": 1347408000000,
+    "updated_at": 1347408000000
+  },
+  {
+    "id": "seed-2",
+    "country_iso2": "US",
+    "start_date": "2018-03-01",
+    "end_date": "2018-03-06",
+    "note": "SXSW参加",
+    "created_at": 1519862400000,
+    "updated_at": 1519862400000
+  },
+  {
+    "id": "seed-3",
+    "country_iso2": "JP",
+    "start_date": "2019-04-15",
+    "end_date": "2019-04-22",
+    "note": "桜の季節に東京・京都",
+    "created_at": 1555286400000,
+    "updated_at": 1555286400000
+  },
+  {
+    "id": "seed-4",
+    "country_iso2": "IT",
+    "start_date": "2020-02-10",
+    "end_date": "2020-02-17",
+    "note": "ローマとフィレンツェ",
+    "created_at": 1581292800000,
+    "updated_at": 1581292800000
+  },
+  {
+    "id": "seed-5",
+    "country_iso2": "AU",
+    "start_date": "2021-12-20",
+    "end_date": "2022-01-05",
+    "note": "シドニーで年越し",
+    "created_at": 1639958400000,
+    "updated_at": 1639958400000
+  }
+]
