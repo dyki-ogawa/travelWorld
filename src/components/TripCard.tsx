@@ -10,8 +10,8 @@ export function TripCard({ trip, onClick }: TripCardProps) {
   const country = getCountryByIso2(trip.country_iso2);
 
   const formatDateRange = () => {
-    if (trip.end_date) {
-      return `${trip.start_date} — ${trip.end_date}`;
+    if (trip.days) {
+      return `${trip.start_date} (${trip.days}日間)`;
     }
     return trip.start_date;
   };

@@ -12,7 +12,7 @@ export type Trip = {
   id: string;          // uuid
   country_iso2: string;// "FR"
   start_date: string;  // "2019-05-01" (YYYY-MM-DD)
-  end_date?: string;   // optional
+  days?: number;       // 滞在日数（任意）
   note?: string;       // 一言メモ
   created_at: number;  // epoch ms
   updated_at: number;  // epoch ms

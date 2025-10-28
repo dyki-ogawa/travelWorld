@@ -284,7 +284,7 @@
 .error-message {
   color: var(--color-danger);
   padding: 0.75rem;
-  background-color: #fee2e2;
+  background-color: #f3f4f6;
   border-radius: 6px;
   margin-bottom: 1rem;
 }
@@ -470,8 +470,8 @@
 
 .backup-message {
   padding: 0.75rem;
-  background-color: #dbeafe;
-  color: #1e40af;
+  background-color: #f3f4f6;
+  color: #374151;
   border-radius: 6px;
   text-align: center;
 }

@@ -26,10 +26,7 @@ export function TripDetail({ trip, onBack, onUpdate }: TripDetailProps) {
     }
   };
 
-  const formatDateRange = () => {
-    if (trip.end_date) {
-      return `${trip.start_date} — ${trip.end_date}`;
-    }
+  const formatDateInfo = () => {
     return trip.start_date;
   };
 
@@ -71,9 +68,15 @@ export function TripDetail({ trip, onBack, onUpdate }: TripDetailProps) {
         <div className="trip-detail-section">
           <h2>訪問記録</h2>
           <div className="detail-item">
-            <span className="detail-label">期間:</span>
-            <span className="detail-value">{formatDateRange()}</span>
+            <span className="detail-label">訪問日:</span>
+            <span className="detail-value">{formatDateInfo()}</span>
           </div>
+          {trip.days && (
+            <div className="detail-item">
+              <span className="detail-label">滞在日数:</span>
+              <span className="detail-value">{trip.days}日間</span>
+            </div>
+          )}
           {trip.note && (
             <div className="detail-item">
               <span className="detail-label">メモ:</span>

@@ -13,7 +13,7 @@ interface TripFormProps {
 export function TripForm({ trip, onSave, onCancel }: TripFormProps) {
   const [countryIso2, setCountryIso2] = useState(trip?.country_iso2 || "");
   const [startDate, setStartDate] = useState(trip?.start_date || "");
-  const [endDate, setEndDate] = useState(trip?.end_date || "");
+  const [days, setDays] = useState(trip?.days?.toString() || "");
   const [note, setNote] = useState(trip?.note || "");
   const [showCountryList, setShowCountryList] = useState(false);
   const [countryQuery, setCountryQuery] = useState("");
@@ -39,8 +39,8 @@ export function TripForm({ trip, onSave, onCancel }: TripFormProps) {
       setError("開始日を入力してください");
       return;
     }
-    if (endDate && startDate > endDate) {
-      setError("開始日は終了日より前である必要があります");
+    if (days && (isNaN(Number(days)) || Number(days) < 1)) {
+      setError("滞在日数は1以上の数値で入力してください");
       return;
     }
 
@@ -51,7 +51,7 @@ export function TripForm({ trip, onSave, onCancel }: TripFormProps) {
         await updateTrip(trip.id, {
           country_iso2: countryIso2,
           start_date: startDate,
-          end_date: endDate || undefined,
+          days: days ? Number(days) : undefined,
           note: note || undefined,
         });
       } else {
@@ -59,7 +59,7 @@ export function TripForm({ trip, onSave, onCancel }: TripFormProps) {
         const input: TripInput = {
           country_iso2: countryIso2,
           start_date: startDate,
-          end_date: endDate || undefined,
+          days: days ? Number(days) : undefined,
           note: note || undefined,
         };
         await createTrip(input);
@@ -138,11 +138,13 @@ export function TripForm({ trip, onSave, onCancel }: TripFormProps) {
         </div>
 
         <div className="form-group">
-          <label>終了日</label>
+          <label>滞在日数</label>
           <input
-            type="date"
-            value={endDate}
-            onChange={(e) => setEndDate(e.target.value)}
+            type="number"
+            min="1"
+            placeholder="例: 3"
+            value={days}
+            onChange={(e) => setDays(e.target.value)}
           />
         </div>
 
