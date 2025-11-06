@@ -37,7 +37,7 @@ function App() {
   return (
     <div className="app">
       <header className="app-header">
-        <h1>🌍 Travel Log</h1>
+        <h1>✈️ 旅行ログ</h1>
         {currentView === "list" && (
           <div className="header-actions">
             <button onClick={handleSettings} className="settings-button">
@@ -90,7 +90,7 @@ function App() {
       </main>
 
       <footer className="app-footer">
-        <p>Travel Log v0.1 - あなたの旅の記録</p>
+        <p>旅行ログ v0.1 - あなたの旅の記録</p>
       </footer>
     </div>
   );
